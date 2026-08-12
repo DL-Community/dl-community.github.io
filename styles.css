@@ -295,6 +295,12 @@ main { overflow: hidden; }
 .contact-links a { min-width: 0; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 16px; border: 1px solid var(--border); border-radius: 11px; background: var(--surface); transition: border-color 150ms ease, transform 150ms ease; }
 .contact-links a:hover { border-color: var(--accent); transform: translateY(-2px); }
 .social-icon { width: 36px; height: 36px; border-radius: 9px; font-size: 10px; }
+.social-icon-image { background: transparent; }
+.social-icon-image img { width: 100%; height: 100%; object-fit: contain; border-radius: inherit; }
+html[data-theme="dark"] .social-icon-github img { filter: invert(1); }
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .social-icon-github img { filter: invert(1); }
+}
 .contact-links strong, .contact-links small { display: block; overflow: hidden; text-overflow: ellipsis; }
 .contact-links strong { font-size: 12px; }
 .contact-links small { margin-top: 4px; color: var(--soft); font-size: 9px; white-space: nowrap; }
