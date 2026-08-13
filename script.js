@@ -3,6 +3,10 @@ const themeToggle = document.querySelector('.theme-toggle');
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 const header = document.querySelector('.site-header');
+const navSectionLinks = [...nav.querySelectorAll('a[href^="#"]')];
+const navSections = navSectionLinks
+  .map((link) => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+  .filter(({ section }) => section);
 const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
 const themeModes = ['auto', 'light', 'dark'];
 const themeModeDetails = {
@@ -57,32 +61,73 @@ if (typeof systemTheme.addEventListener === 'function') {
   systemTheme.addListener(updateThemeControl);
 }
 
+function closeMenu({ restoreFocus = false } = {}) {
+  const wasOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+  nav.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.setAttribute('aria-label', '打开导航菜单');
+  if (restoreFocus && wasOpen) menuToggle.focus();
+}
+
 menuToggle.addEventListener('click', () => {
-  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', String(!isOpen));
-  menuToggle.setAttribute('aria-label', isOpen ? '打开导航菜单' : '关闭导航菜单');
-  nav.classList.toggle('open', !isOpen);
+  const willOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
+  menuToggle.setAttribute('aria-expanded', String(willOpen));
+  menuToggle.setAttribute('aria-label', willOpen ? '关闭导航菜单' : '打开导航菜单');
+  nav.classList.toggle('open', willOpen);
 });
 
 nav.addEventListener('click', (event) => {
   if (event.target.closest('a')) {
-    nav.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', '打开导航菜单');
+    closeMenu();
   }
 });
 
 document.addEventListener('click', (event) => {
   if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
-    nav.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', '打开导航菜单');
+    closeMenu();
   }
 });
 
-window.addEventListener('scroll', () => {
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeMenu({ restoreFocus: true });
+});
+
+let scrollFrame = 0;
+
+function updateScrollState() {
   header.classList.toggle('scrolled', window.scrollY > 8);
+
+  const marker = window.scrollY + Math.min(window.innerHeight * 0.36, 280);
+  let activeId = null;
+  navSections.forEach(({ section }) => {
+    if (section.offsetTop <= marker) activeId = section.id;
+  });
+
+  navSections.forEach(({ link, section }) => {
+    const isActive = section.id === activeId;
+    link.classList.toggle('is-active', isActive);
+    if (isActive) {
+      link.setAttribute('aria-current', 'location');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
+function scheduleScrollUpdate() {
+  if (scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(() => {
+    updateScrollState();
+    scrollFrame = 0;
+  });
+}
+
+window.addEventListener('scroll', scheduleScrollUpdate, { passive: true });
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 760) closeMenu();
+  scheduleScrollUpdate();
 }, { passive: true });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 applyThemeMode(currentThemeMode(), false);
+updateScrollState();
