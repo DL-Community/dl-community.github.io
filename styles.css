@@ -119,8 +119,16 @@ img { display: block; max-width: 100%; }
   color: var(--text);
   cursor: pointer;
 }
+.theme-toggle {
+  width: auto;
+  min-width: 68px;
+  grid-template-columns: 20px auto;
+  gap: 5px;
+  padding: 0 10px;
+}
 .theme-toggle:hover { border-color: var(--accent); }
 .theme-icon { font-size: 19px; line-height: 1; }
+.theme-mode-text { font-size: 12px; font-weight: 700; line-height: 1; }
 .menu-toggle { display: none; gap: 4px; padding: 10px; }
 .menu-toggle span { width: 18px; height: 1.5px; background: currentColor; transition: 160ms ease; }
 

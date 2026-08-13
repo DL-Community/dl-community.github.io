@@ -20,6 +20,8 @@
       if (savedTheme === 'light' || savedTheme === 'dark') {
         document.documentElement.dataset.theme = savedTheme;
       }
+      document.documentElement.dataset.themeMode =
+        savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'auto';
     } catch (_) {}
   </script>
 </head>
@@ -41,8 +43,9 @@
       </nav>
 
       <div class="header-actions">
-        <button class="theme-toggle" type="button" aria-label="切换颜色主题" title="切换颜色主题">
+        <button class="theme-toggle" type="button" aria-label="主题：自动，跟随浏览器；点击切换到浅色主题" title="主题：自动（跟随浏览器）">
           <span class="theme-icon" aria-hidden="true">◐</span>
+          <span class="theme-mode-text">自动</span>
         </button>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="打开导航菜单">
           <span></span><span></span><span></span>
