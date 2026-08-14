@@ -258,6 +258,12 @@ main { overflow: hidden; }
 .project-scope { align-self: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .scope-identity { display: flex; align-items: center; gap: 14px; padding: 22px 0 24px; border-bottom: 1px solid var(--border); }
 .scope-identity img { width: 44px; height: 44px; object-fit: contain; }
+.scope-identity > span, .scope-list dd {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .scope-identity strong, .scope-identity small, .scope-list strong, .scope-list small { display: block; }
 .scope-identity strong { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
 .scope-identity small { margin-top: 3px; color: var(--muted); font-size: 12px; }
@@ -265,7 +271,7 @@ main { overflow: hidden; }
 .scope-list > div { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 18px; padding: 20px 0; border-top: 1px solid var(--border); }
 .scope-list > div:first-child { border-top: 0; }
 .scope-list dt { color: var(--soft); font-size: 12px; font-weight: 600; }
-.scope-list dd { min-width: 0; margin: 0; }
+.scope-list dt, .scope-list dd { margin: 0; }
 .scope-list strong { overflow-wrap: anywhere; font-size: 14px; font-weight: 700; line-height: 1.45; }
 .scope-list small { margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.5; }
 
