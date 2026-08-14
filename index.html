@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DL Community 官方门户：下载 DLCE，浏览主要仓库和 Wiki，联系开发组。">
+  <meta name="description" content="Dancing Line: Community Edition（DLCE）是玩家社区基于《跳舞的线》重写的非商业重制版。">
   <meta name="theme-color" content="#f7f8fc" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="DL Community · 官方门户">
-  <meta property="og:description" content="下载 DLCE，浏览主要仓库和 Wiki，联系开发组。">
+  <meta property="og:title" content="DL Community — 跳舞的线：社区版">
+  <meta property="og:description" content="由玩家社区重写的非商业重制版，收录原作关卡与精选饭制关卡。">
   <meta property="og:url" content="https://dl-community.github.io/">
   <link rel="canonical" href="https://dl-community.github.io/">
   <link
@@ -20,7 +20,7 @@
     data-dark-href="assets/dl-logo-white.png"
   >
   <link rel="stylesheet" href="styles.css">
-  <title>DL Community · 官方门户</title>
+  <title>DL Community — 跳舞的线：社区版</title>
   <script>
     try {
       const savedTheme = localStorage.getItem('dl-theme');
@@ -50,9 +50,9 @@
       </a>
 
       <nav class="main-nav" id="main-nav" aria-label="主要导航">
-        <a href="/Docs/#/?id=downloads">游戏下载</a>
-        <a href="#projects">主要仓库</a>
-        <a href="#contact">联系方式</a>
+        <a href="/Docs/#/?id=downloads">下载</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
         <a href="https://github.com/DL-Community" target="_blank" rel="noreferrer">GitHub <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
       </nav>
 
@@ -71,66 +71,47 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title">DL Community<br><em>官方门户</em></h1>
-        <p class="hero-lead">下载 DLCE，浏览官方仓库，或联系开发组。</p>
+        <h1 id="hero-title">跳舞的线：<br><em>社区版</em></h1>
+        <p class="hero-lead">Dancing Line: Community Edition（DLCE）是玩家社区制作的非商业重制版，收录原作关卡与精选饭制关卡。我们继续更新游戏，也维护 Wiki 和多语言翻译。</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="/Docs/#/?id=downloads">下载 DLCE <span class="arrow-mark" aria-hidden="true"></span></a>
-          <a class="button button-secondary" href="https://github.com/DL-Community" target="_blank" rel="noreferrer">浏览仓库</a>
-          <a class="button button-secondary" href="/Docs/">文档站</a>
+          <a class="button button-primary" href="/Docs/#/?id=downloads">下载游戏 <span class="arrow-mark" aria-hidden="true"></span></a>
+          <a class="button button-secondary" href="https://github.com/DL-Community" target="_blank" rel="noreferrer">查看项目</a>
+          <a class="button button-secondary" href="/Docs/">阅读 Wiki</a>
         </div>
       </div>
 
-      <div class="portal-preview" aria-label="DL Community 核心入口">
-        <div class="preview-topbar">
-          <span>DL Community</span>
-          <span class="preview-status"><i aria-hidden="true"></i> 官方门户</span>
+      <aside class="project-scope" aria-label="DLCE 项目概览">
+        <div class="scope-identity">
+          <img src="assets/dlce.png" alt="" width="44" height="44">
+          <span><strong>DL Community</strong><small>DLCE 社区开发组</small></span>
         </div>
-        <div class="preview-body">
-          <div class="preview-brand">
-            <img src="assets/dlce.png" alt="" width="44" height="44">
-            <div><strong>常用入口</strong><small>下载、仓库与联系方式</small></div>
-          </div>
-          <div class="preview-label">直接前往</div>
-          <div class="preview-list">
-            <a class="preview-card" href="/Docs/#/?id=downloads">
-              <span class="preview-card-icon" aria-hidden="true">DL</span>
-              <span><strong>下载 DLCE</strong><small>获取游戏与版本信息</small></span>
-              <b class="arrow-mark" aria-hidden="true"></b>
-            </a>
-            <a class="preview-card" href="#projects">
-              <span class="preview-card-icon" aria-hidden="true">GH</span>
-              <span><strong>主要仓库</strong><small>游戏、文档与翻译项目</small></span>
-              <b class="arrow-mark" aria-hidden="true"></b>
-            </a>
-            <a class="preview-card" href="#contact">
-              <span class="preview-card-icon" aria-hidden="true">@</span>
-              <span><strong>联系方式</strong><small>玩家社区与开发组邮箱</small></span>
-              <b class="arrow-mark" aria-hidden="true"></b>
-            </a>
-          </div>
-        </div>
-      </div>
+        <dl class="scope-list">
+          <div><dt>游戏</dt><dd><strong>DancingLine-CommunityEdition</strong><small>下载、更新与问题反馈</small></dd></div>
+          <div><dt>文档</dt><dd><strong>跳舞的线：社区版 Wiki</strong><small>玩法、配置与版本资料</small></dd></div>
+          <div><dt>翻译</dt><dd><strong>DLCE-Translations</strong><small>由玩家共同维护的多语言文本</small></dd></div>
+        </dl>
+      </aside>
     </section>
 
     <section class="section projects" id="projects" aria-labelledby="projects-title">
       <div class="section-heading">
         <div>
-          <h2 id="projects-title">主要仓库</h2>
-          <p>DLCE 的游戏、文档和翻译分别维护。</p>
+          <h2 id="projects-title">项目与协作</h2>
+          <p>游戏、Wiki 和翻译各有独立仓库；下载与反馈请进入对应项目。</p>
         </div>
-        <a class="section-link" href="https://github.com/orgs/DL-Community/repositories" target="_blank" rel="noreferrer">查看全部仓库 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
+        <a class="section-link" href="https://github.com/orgs/DL-Community/repositories" target="_blank" rel="noreferrer">全部仓库 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
       </div>
 
       <div class="project-grid">
         <article class="project-card project-card-primary">
           <div class="project-topline">
             <span class="project-icon" aria-hidden="true">DL</span>
-            <span class="status"><i></i> 持续更新</span>
+            <span class="project-path">GitHub</span>
           </div>
-          <p class="project-type">游戏与下载</p>
+          <p class="project-type">游戏下载与反馈</p>
           <h3>DancingLine-CommunityEdition</h3>
-          <p>DLCE 公开下载仓库，包含版本发布和问题反馈。</p>
-          <a class="card-action" href="https://github.com/DL-Community/DancingLine-CommunityEdition" target="_blank" rel="noreferrer">打开游戏仓库 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
+          <p>获取游戏、查看版本记录，或提交问题。</p>
+          <a class="card-action" href="https://github.com/DL-Community/DancingLine-CommunityEdition" target="_blank" rel="noreferrer">查看仓库 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
         </article>
 
         <article class="project-card">
@@ -139,11 +120,11 @@
             <span class="project-path">GitHub</span>
           </div>
           <p class="project-type">文档</p>
-          <h3>Docs</h3>
-          <p>DLCE Wiki 的文档仓库。</p>
+          <h3>跳舞的线：社区版 Wiki</h3>
+          <p>查阅配置、玩法、版本记录与法律信息。</p>
           <div class="inline-actions">
-            <a class="card-action" href="https://github.com/DL-Community/Docs" target="_blank" rel="noreferrer">打开文档仓库 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
-            <a class="quiet-link" href="/Docs/">在线 Wiki</a>
+            <a class="card-action" href="https://github.com/DL-Community/Docs" target="_blank" rel="noreferrer">查看仓库 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
+            <a class="quiet-link" href="/Docs/">阅读 Wiki</a>
           </div>
         </article>
 
@@ -154,66 +135,50 @@
           </div>
           <p class="project-type">翻译</p>
           <h3>DLCE-Translations</h3>
-          <p>提交和维护 DLCE 的多语言翻译。</p>
-          <a class="card-action" href="https://github.com/DL-Community/DLCE-Translations" target="_blank" rel="noreferrer">打开翻译仓库 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
+          <p>由玩家共同维护的游戏多语言文本。</p>
+          <a class="card-action" href="https://github.com/DL-Community/DLCE-Translations" target="_blank" rel="noreferrer">查看仓库 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
         </article>
       </div>
-    </section>
-
-    <section class="section contribute" id="contribute" aria-labelledby="contribute-title">
-      <div class="contribute-intro">
-        <h2 id="contribute-title">参与项目</h2>
-        <p>翻译、问题反馈和文档改进均通过 GitHub 提交。</p>
-      </div>
-      <div class="contribute-options">
-        <a class="contribute-card" href="https://github.com/DL-Community/DLCE-Translations" target="_blank" rel="noreferrer">
-          <div>
-            <h3>维护游戏翻译</h3>
-            <p>在翻译仓库提交或校对文本。</p>
-          </div>
-          <span class="option-arrow arrow-mark arrow-external" aria-hidden="true"></span>
-        </a>
-        <a class="contribute-card" href="https://github.com/DL-Community" target="_blank" rel="noreferrer">
-          <div>
-            <h3>查看公开项目</h3>
-            <p>从组织主页进入仓库，查看 Issue 和开发进度。</p>
-          </div>
-          <span class="option-arrow arrow-mark arrow-external" aria-hidden="true"></span>
-        </a>
+      <div class="contribute-note">
+        <p><strong>想参与？</strong>翻译可以直接提交 Pull Request；Bug 和建议请前往对应项目。</p>
+        <div>
+          <a href="https://github.com/DL-Community/DLCE-Translations" target="_blank" rel="noreferrer">翻译仓库 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
+          <a href="https://github.com/DL-Community" target="_blank" rel="noreferrer">GitHub 组织 <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
+        </div>
       </div>
     </section>
 
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="section-heading contact-heading">
         <div>
-          <h2 id="contact-title">联系方式</h2>
-          <p>加入玩家社区，关注官方频道，或直接联系开发组。</p>
+          <h2 id="contact-title">联系与关注</h2>
+          <p>聊天和公告在 Discord、QQ；Bug、翻译与项目协作走 GitHub。</p>
         </div>
       </div>
 
       <div class="contact-groups">
         <div class="contact-group">
-          <div class="contact-group-label"><span>交流</span><small>玩家社区</small></div>
+          <div class="contact-group-label"><span>玩家社区</span><small>群组与公告</small></div>
           <div class="contact-links">
-            <a href="https://discord.com/invite/8Ew5n3XadT" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image"><img src="../Docs/lib/img/discord.png" alt="" width="36" height="36"></span><span><strong>Discord</strong><small>国际玩家群组</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
-            <a href="/Docs/#/social/qq"><span class="social-icon social-icon-image"><img src="../Docs/lib/img/qq.png" alt="" width="36" height="36"></span><span><strong>QQ 群</strong><small>中文玩家群组</small></span><b class="arrow-mark" aria-hidden="true"></b></a>
-            <a href="https://pd.qq.com/s/2njtk4vj2" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image"><img src="../Docs/lib/img/qq-channel.png" alt="" width="36" height="36"></span><span><strong>QQ 频道</strong><small>公告与社区动态</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
+            <a href="https://discord.com/invite/8Ew5n3XadT" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image"><img src="assets/social/discord.png" alt="" width="36" height="36"></span><span><strong>Discord</strong><small>国际玩家交流</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
+            <a href="/Docs/#/social/qq"><span class="social-icon social-icon-image"><img src="assets/social/qq.png" alt="" width="36" height="36"></span><span><strong>QQ 群</strong><small>中文玩家交流</small></span><b class="arrow-mark" aria-hidden="true"></b></a>
+            <a href="https://pd.qq.com/s/2njtk4vj2" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image"><img src="assets/social/qq-channel.png" alt="" width="36" height="36"></span><span><strong>QQ 频道</strong><small>公告与动态</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
           </div>
         </div>
 
         <div class="contact-group">
-          <div class="contact-group-label"><span>视频</span><small>内容频道</small></div>
+          <div class="contact-group-label"><span>视频频道</span><small>更新与演示</small></div>
           <div class="contact-links">
-            <a href="https://space.bilibili.com/187016314" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image"><img src="../Docs/lib/img/bili.png" alt="" width="36" height="36"></span><span><strong>哔哩哔哩</strong><small>中文视频与版本动态</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
-            <a href="https://www.youtube.com/@DLCommunityEdition" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image"><img src="../Docs/lib/img/yt_icon_red_digital.png" alt="" width="36" height="36"></span><span><strong>YouTube</strong><small>游戏视频与官方内容</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
+            <a href="https://space.bilibili.com/187016314" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image"><img src="assets/social/bili.png" alt="" width="36" height="36"></span><span><strong>哔哩哔哩</strong><small>中文视频</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
+            <a href="https://www.youtube.com/@DLCommunityEdition" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image"><img src="assets/social/yt_icon_red_digital.png" alt="" width="36" height="36"></span><span><strong>YouTube</strong><small>游戏视频</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
           </div>
         </div>
 
         <div class="contact-group">
-          <div class="contact-group-label"><span>开发组</span><small>项目协作</small></div>
+          <div class="contact-group-label"><span>开发协作</span><small>代码与邮件</small></div>
           <div class="contact-links">
             <a href="mailto:development.dlce@gmail.com"><span class="social-icon social-icon-mail" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.75 6.75h16.5v10.5H3.75zM4.5 7.5l7.5 5.25 7.5-5.25"/></svg></span><span><strong>开发邮箱</strong><small>development.dlce@gmail.com</small></span><b class="arrow-mark" aria-hidden="true"></b></a>
-            <a href="https://github.com/DL-Community" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image social-icon-github"><img src="../Docs/lib/img/github-mark.png" alt="" width="36" height="36"></span><span><strong>GitHub 组织</strong><small>仓库、Issue 与开发动态</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
+            <a href="https://github.com/DL-Community" target="_blank" rel="noreferrer"><span class="social-icon social-icon-image social-icon-github"><img src="assets/social/github-mark.png" alt="" width="36" height="36"></span><span><strong>GitHub 组织</strong><small>代码、Issue 与进度</small></span><b class="arrow-mark arrow-external" aria-hidden="true"></b></a>
           </div>
         </div>
       </div>
@@ -221,17 +186,17 @@
 
     <section class="cta" aria-labelledby="cta-title">
       <div>
-        <h2 id="cta-title">查安装和使用说明</h2>
-        <p>官方 Wiki 收录下载、安装和功能文档。</p>
+        <h2 id="cta-title">第一次安装？</h2>
+        <p>Wiki 里有下载入口、系统要求和常见问题。</p>
       </div>
-      <a class="button button-light" href="/Docs/">打开官方 Wiki <span class="arrow-mark" aria-hidden="true"></span></a>
+      <a class="button button-light" href="/Docs/">阅读 Wiki <span class="arrow-mark" aria-hidden="true"></span></a>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-brand">
       <img src="assets/dlce.png" alt="" width="30" height="30">
-      <span><strong>DL Community</strong><small>DLCE 官方开发组</small></span>
+      <span><strong>DL Community</strong><small>DLCE 社区开发组</small></span>
     </div>
     <div class="footer-center">
       <a href="https://github.com/DL-Community" target="_blank" rel="noreferrer">github.com/DL-Community <span class="arrow-mark arrow-external" aria-hidden="true"></span></a>
