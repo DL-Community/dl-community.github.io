@@ -11,7 +11,14 @@
   <meta property="og:description" content="下载 DLCE，浏览主要仓库和 Wiki，联系开发组。">
   <meta property="og:url" content="https://dl-community.github.io/">
   <link rel="canonical" href="https://dl-community.github.io/">
-  <link rel="icon" href="assets/dlce.png" type="image/png">
+  <link
+    id="site-favicon"
+    rel="icon"
+    href="../Docs/lib/img/favicon/dark.png"
+    type="image/png"
+    data-light-href="../Docs/lib/img/favicon/dark.png"
+    data-dark-href="../Docs/lib/img/favicon/white.png"
+  >
   <link rel="stylesheet" href="styles.css">
   <title>DL Community · 官方门户</title>
   <script>
@@ -22,6 +29,13 @@
       }
       document.documentElement.dataset.themeMode =
         savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'auto';
+
+      const resolvedTheme = savedTheme === 'dark' ||
+        (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ? 'dark'
+        : 'light';
+      const favicon = document.getElementById('site-favicon');
+      favicon.href = favicon.dataset[`${resolvedTheme}Href`];
     } catch (_) {}
   </script>
 </head>
@@ -31,7 +45,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="/" aria-label="DL Community 首页">
-        <img src="assets/dlce.png" alt="" width="34" height="34">
+        <span class="brand-logo" aria-hidden="true"></span>
         <span>DL Community</span>
       </a>
 

@@ -4,9 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/assets/dlce.png" type="image/png">
+  <link
+    id="site-favicon"
+    rel="icon"
+    href="/Docs/lib/img/favicon/dark.png"
+    type="image/png"
+    data-light-href="/Docs/lib/img/favicon/dark.png"
+    data-dark-href="/Docs/lib/img/favicon/white.png"
+  >
   <link rel="stylesheet" href="/styles.css">
   <title>页面未找到 · DL Community</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('dl-theme');
+      const themeMode = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'auto';
+      const resolvedTheme = themeMode === 'auto'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : themeMode;
+      document.documentElement.dataset.themeMode = themeMode;
+      if (themeMode !== 'auto') document.documentElement.dataset.theme = themeMode;
+
+      const favicon = document.getElementById('site-favicon');
+      favicon.href = favicon.dataset[`${resolvedTheme}Href`];
+    } catch (_) {}
+  </script>
 </head>
 <body>
   <main class="error-page">

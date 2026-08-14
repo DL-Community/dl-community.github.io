@@ -1,5 +1,6 @@
 const root = document.documentElement;
 const themeToggle = document.querySelector('.theme-toggle');
+const siteFavicon = document.querySelector('#site-favicon');
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 const header = document.querySelector('.site-header');
@@ -19,6 +20,17 @@ function currentThemeMode() {
   return themeModes.includes(root.dataset.themeMode) ? root.dataset.themeMode : 'auto';
 }
 
+function resolvedTheme(mode = currentThemeMode()) {
+  return mode === 'auto' ? (systemTheme.matches ? 'dark' : 'light') : mode;
+}
+
+function updateSiteFavicon(theme = resolvedTheme()) {
+  const themeHref = siteFavicon?.dataset[`${theme}Href`];
+  if (themeHref && siteFavicon.getAttribute('href') !== themeHref) {
+    siteFavicon.setAttribute('href', themeHref);
+  }
+}
+
 function applyThemeMode(mode, save = true) {
   root.dataset.themeMode = mode;
   if (mode === 'auto') {
@@ -30,6 +42,7 @@ function applyThemeMode(mode, save = true) {
   if (save) {
     try { localStorage.setItem('dl-theme', mode); } catch (_) {}
   }
+  updateSiteFavicon(resolvedTheme(mode));
   updateThemeControl();
 }
 
@@ -55,10 +68,15 @@ themeToggle.addEventListener('click', () => {
   applyThemeMode(nextMode);
 });
 
+function handleSystemThemeChange() {
+  updateSiteFavicon();
+  updateThemeControl();
+}
+
 if (typeof systemTheme.addEventListener === 'function') {
-  systemTheme.addEventListener('change', updateThemeControl);
+  systemTheme.addEventListener('change', handleSystemThemeChange);
 } else {
-  systemTheme.addListener(updateThemeControl);
+  systemTheme.addListener(handleSystemThemeChange);
 }
 
 function closeMenu({ restoreFocus = false } = {}) {
