@@ -23,3 +23,6 @@ main,.site-footer{width:min(calc(100% - 40px),var(--max));margin-inline:auto}.in
 .nav-title,.site-header.title-visible .nav-title{opacity:1;transform:none;transition:none}
 .site-header.title-visible .brand{opacity:1;pointer-events:auto;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){.brand{transform:none;transition:opacity 120ms var(--ease)}}
+.theme-logo{content:url("assets/dl-logo-dark.png")}
+html[data-theme=dark] .theme-logo{content:url("assets/dl-logo-white.png")}
+@media(prefers-color-scheme:dark){html:not([data-theme=light]) .theme-logo{content:url("assets/dl-logo-white.png")}}
