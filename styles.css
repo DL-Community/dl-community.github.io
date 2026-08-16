@@ -26,4 +26,4 @@ main,.site-footer{width:min(calc(100% - 40px),var(--max));margin-inline:auto}.in
 .theme-logo{content:url("assets/dl-logo-dark.png")}
 html[data-theme=dark] .theme-logo{content:url("assets/dl-logo-white.png")}
 @media(prefers-color-scheme:dark){html:not([data-theme=light]) .theme-logo{content:url("assets/dl-logo-white.png")}}
-@media(max-width:620px){.project-actions a{justify-content:flex-start}.project-actions a .arrow-mark{margin-left:auto}}
+@media(max-width:620px){.project-actions a{justify-content:space-between}.project-actions a .arrow-mark{margin-left:auto}}
