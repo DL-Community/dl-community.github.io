@@ -19,3 +19,7 @@ main,.site-footer{width:min(calc(100% - 40px),var(--max));margin-inline:auto}.in
 .site-header.title-visible .nav-title{opacity:1;transform:translateY(0)}
 @media(max-width:760px){.brand>span.nav-title:last-child{display:block}.nav-title{max-width:calc(100vw - 220px)}}
 @media(prefers-reduced-motion:reduce){.nav-title{transform:none;transition:opacity 120ms var(--ease)}}
+.brand{opacity:0;pointer-events:none;transform:translateY(25%);transition:opacity 180ms var(--ease),transform 180ms var(--ease)}
+.nav-title,.site-header.title-visible .nav-title{opacity:1;transform:none;transition:none}
+.site-header.title-visible .brand{opacity:1;pointer-events:auto;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.brand{transform:none;transition:opacity 120ms var(--ease)}}
