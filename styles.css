@@ -15,3 +15,4 @@ main,.site-footer{width:min(calc(100% - 40px),var(--max));margin-inline:auto}.in
 @media(max-width:620px){.intro{grid-template-columns:52px 1fr}.org-link{grid-column:1/-1;margin-top:0}}
 :root{--soft:#687080}html[data-theme=dark]{--soft:#aeb4bf}
 @media(prefers-color-scheme:dark){html:not([data-theme=light]){--soft:#aeb4bf}}
+.brand img.brand-logo{background:none;object-fit:contain}
