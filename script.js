@@ -4,6 +4,8 @@ const siteFavicon = document.querySelector('#site-favicon');
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 const header = document.querySelector('.site-header');
+const pageTitle = document.querySelector('#page-title');
+const navTitle = document.querySelector('.nav-title');
 const navSectionLinks = [...nav.querySelectorAll('a[href^="#"]')];
 const navSections = navSectionLinks
   .map((link) => ({ link, section: document.querySelector(link.getAttribute('href')) }))
@@ -114,6 +116,10 @@ let scrollFrame = 0;
 
 function updateScrollState() {
   header.classList.toggle('scrolled', window.scrollY > 8);
+  if (pageTitle && navTitle) {
+    const titleIsCovered = pageTitle.getBoundingClientRect().bottom <= header.getBoundingClientRect().bottom;
+    header.classList.toggle('title-visible', titleIsCovered);
+  }
 
   const marker = window.scrollY + Math.min(window.innerHeight * 0.36, 280);
   let activeId = null;
