@@ -8,6 +8,6 @@ DL Community 的 GitHub Pages 根域名门户，连接官方文档与后续社�
 
 ## 部署
 
-仓库名为 `DL-Community/dl-community.github.io` 时，将 GitHub Pages 的发布来源设置为默认分支根目录，站点会发布到 <https://dl-community.github.io/>。
+仓库名为 `DL-Community/dl-community.github.io` 时，将 GitHub Pages 的发布来源设置为默认分支根目录，在 GitHub Pages 设置中将自定义域名设为 `dlce.somnartis.net`（与仓库中的 `CNAME` 一致），站点发布到 <https://dlce.somnartis.net/>。
 
 新增 Pages 项目时，在 `index.html` 的站点目录中添加对应入口即可。
